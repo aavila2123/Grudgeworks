@@ -1,0 +1,664 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* font */
+.jacquard-24-regular {
+  font-family: "Jacquard 24", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+}
+
+.carol-gothic-regular {
+font-family: "carol-gothic", sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 35px;
+}
+
+.xenara-regular {
+font-family: "xenera", sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 15px;
+}
+
+.xenara-bold {
+    font-family: "xenera", sans-serif;
+font-weight: 700;
+font-style: normal;
+font-size: 25px;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header Section */
+.main-header {
+    display: grid;
+    grid-template-rows: 1fr auto; /* Two rows: Logo and Navigation */
+    align-items: center;
+    height: 25vh; /* Total height of the header */
+    background-color: white;
+   
+    padding: 0;
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110%; /* Ensure it takes full height of its grid row */
+    overflow: hidden; /* Prevent overflow of content */
+}
+.logo-image {
+    max-height: 80%; /* Constrain image height */
+    max-width: 80%; /* Constrain image width */
+    object-fit: contain; /* Ensures the image fits within its container */
+}
+
+/* Navigation Section */
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure it takes full height of its grid row */
+    padding-bottom: 10px;
+    background-color: black;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    margin: 0; /* Prevent extra spacing */
+    padding: 0; /* Prevent extra spacing */
+}
+.nav-links li {
+    font-size: 1rem;
+}
+/* Base style for navigation links */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+    color: darkred;
+}
+
+/* Ensure higher specificity if needed */
+.navigation .nav-links a {
+    color: white;
+}
+
+.navigation .nav-links a:hover {
+    color: darkred;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .carol-gothic-regular {
+       font-size: 20px;
+    }
+.nav-links {
+    gap: 15px;
+   
+}
+    
+}
+
+            /* Carousel Section Styling */
+.carousel-section {
+  width: 100%;
+  position: relative;
+  margin: 0px 0;
+  background-color: black;
+  height: 60vh;
+}
+
+.carousel-header {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.icon {
+  cursor: pointer;
+  color: black;
+}
+
+.carousel-wrapper {
+  position: relative;
+  top: 20px;
+  overflow: hidden;
+  margin: 0 20px; /* Add margins for the carousel */
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.control-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.nav-links a {
+  color: #000;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+
+   .carousel-section {
+    height: 24vh;
+   
+}
+    
+}
+
+/*vote section*/
+ /* General Section Styling */
+        .image-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr; /* four columns */
+            grid-template-rows: 1fr 1fr; /* Two rows */
+            gap: 10px; /* Spacing between grid items */
+            height: 80vh; /* Half the page height */
+            padding: 20px;
+            padding-top: 50px;
+            box-sizing: border-box;
+            background-image: url("brickwall.jpg");
+            grid-template-areas: 
+            "image1 image1 image2 image2"
+            "image1 image1 image3 image4";
+        }
+        .image1 {
+            grid-area: image1;
+        }
+        .image2 {
+            grid-area: image2;
+        }
+        .image3 {
+            grid-area: image3;
+        }
+        .image4 {
+            grid-area: image4;
+        }
+
+        /* Individual Image Containers */
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .votebutton {
+            background-color: white; 
+            position: relative;
+            bottom: 10px;
+            right: 20px;
+            width: 300px;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+
+        }
+
+        /* Images */
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image fills its area */
+            transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover effect */
+        }
+
+        .image-container:hover img {
+            transform: scale(1.05); /* Zooms in slightly */
+            filter: brightness(50%); /* Adds a grey tint */
+        }
+
+        /* Text Overlay */
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2.5rem;
+            text-align: center;
+            opacity: 0; /* Hidden by default */
+            transition: opacity 0.3s ease; /* Smooth fade-in on hover */
+        }
+
+        .image-container:hover .overlay-text {
+            opacity: 1; /* Becomes visible on hover */
+        }
+
+@media screen and (max-width: 768px) {
+
+   .image-section {
+            gap: 5px; /* Spacing between grid items */
+            height: 50vh; /* Half the page height */
+            padding: 20px;
+            padding-top: 50px;
+        }
+
+    .overlay-text {
+            font-size: 1rem;
+        }
+}
+
+        /* Section4 */
+        #interactive-section {
+    position: relative;
+    height: 50vh; /* Full height of the screen */
+    background: black; /* Fully dark background */
+    overflow: hidden;
+    cursor: none; /* Hide the default cursor */
+}
+
+#interactive-section h2 {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.5rem;
+    z-index: 10; /* Ensure the header is above the light */
+}
+
+#interactive-section .light {
+    position: absolute;
+    width: 150px; /* Light circle diameter */
+    height: 150px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 1) 0%, rgba(0, 0, 0, 0) 70%);
+    pointer-events: none;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5; /* Ensure light is below the header */
+    display: none; /* Hide light by default */
+}
+
+#interactive-section .custom-cursor {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: url('customblacklight.png') no-repeat center center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 15;
+    transform: translate(-50%, -50%);
+}
+
+#interactive-section img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px; /* Rounded corners */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#interactive-section img:hover {
+    transform: scale(1.2);
+}
+
+#interactive-section img.reveal {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+
+   .carousel-section {
+    height: 24vh;
+   
+}
+    
+}
+
+/* Section 5 */
+/* General layout for Section 5 */
+#section-5 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 5fr;
+    height: 50vh;
+    background: #f4f4f4;
+    grid-template-areas: 
+        "header-part info-part carousel-part";
+}
+
+.header-part {
+    background-color: darkred ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    grid-area: header-part;
+}
+
+.header-part h2 {
+    font-size: 3rem;
+    color: white;
+    margin: 0;
+}
+
+.info-part {
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    grid-area: info-part;
+}
+
+.info-part h3, .info-part p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Carousel Section */
+.carousel-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    grid-area: carousel-part;
+}
+
+
+
+.carousel-item-5 {
+    flex: 0 0 100%;
+    height: 100%;
+     transition: transform 0.5s ease-in-out;
+    display: flex;
+    display: none; /* Default hidden */
+    position: relative;
+}
+
+.carousel-item-5.active {
+    display: block; /* Show only the active slide */
+}
+
+.carousel-item-5 img {
+    width: 100%;
+   
+    object-fit: cover;
+}
+
+.carousel-btn-5 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.prev-btn-5 {
+    left: 10px;
+}
+
+.next-btn-5 {
+    right: 10px;
+}
+
+.carousel-control-5 {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    border-radius: 5px;
+}
+
+.carousel-part:hover .carousel-btn-5,
+.carousel-part:hover .carousel-control-5 {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Section 6 */
+.section-6 {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Quarter page */
+    background-image: url("ocean.jpg");
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop-center {
+    position: absolute;
+    z-index: 2;
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.floating-box {
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    background-color: linen;
+    color: black;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Section 7 */
+/* Section 7 Styles */
+#footer {
+    background-color: white;
+    color: white;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Back to Top button */
+.back-to-top {
+    background-color: black;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.back-to-top a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.back-to-top a:hover {
+    text-decoration: underline;
+}
+
+/* Footer content styles */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    padding: 0 20px; /* Added padding to ensure content doesn't touch the edges */
+}
+
+/* Footer info sections */
+.footer-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Add gap between the sections */
+}
+
+.footer-section {
+    width: 30%;
+}
+
+.footer-section h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.footer-section p, .footer-section ul {
+    font-size: 14px;
+    color: black;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+      font-size: 14px;
+}
+
+.footer-section ul li a {
+    color: black;
+      font-size: 14px;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer image */
+.footer-image img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+
+
+/* adjust size of floating boxes */
+@media screen and (max-width: 768px) {
+    .footer-image img {
+    max-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+#section-5 {
+    height: 35vh;
+}
+
+}
+
+
+
+

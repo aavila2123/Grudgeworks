@@ -1,0 +1,76 @@
+/* Ensure the grid container is initialized */
+.newcomerspage {
+    display: grid;
+     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 5fr;
+    grid-template-areas:
+        "newheader newheader newheader"
+        "newimage1 newimage2 newimage3"
+        "newblurb1 newblurb2 newblurb3"
+        "newimage4 newimage5 newimage6"
+        "newblurb4 newblurb5 newblurb6";
+    gap: 20px;
+    margin: 20px;
+}
+
+/* Grid Areas */
+.newheader {
+    grid-area: newheader;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.newimage1 { grid-area: newimage1; }
+.newimage2 { grid-area: newimage2; }
+.newimage3 { grid-area: newimage3; }
+.newimage4 { grid-area: newimage4; }
+.newimage5 { grid-area: newimage5; }
+.newimage6 { grid-area: newimage6; }
+
+.newblurb1 { grid-area: newblurb1; }
+.newblurb2 { grid-area: newblurb2; }
+.newblurb3 { grid-area: newblurb3; }
+.newblurb4 { grid-area: newblurb4; }
+.newblurb5 { grid-area: newblurb5; }
+.newblurb6 { grid-area: newblurb6; }
+
+/* Image Styling */
+.newcomerspage img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: filter 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.newcomerspage img:hover {
+    filter: brightness(70%); /* Darkens the image slightly */
+    transform: scale(1.02); /* Optional: Adds a slight zoom effect */
+}
+
+/* Blurb Styling */
+.newcomerspage div[class*="newblurb"] {
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    .newcomerspage {
+        grid-template-areas:
+            "newheader newheader"
+            "newimage1 newblurb1"
+            "newimage2 newblurb2"
+            "newimage3 newblurb3"
+            "newimage4 newblurb4"
+            "newimage5 newblurb5"
+            "newimage6 newblurb6";
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .newheader {
+        margin-bottom: 10px;
+}
+
+}
